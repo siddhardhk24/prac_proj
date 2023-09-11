@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package prac_proj;
+
+option go_package = "github.com/siddhardhk24/prac_proj/proto";
+
+service Iv_service{
+ rpc create_IV(IV_struct) returns (response_IV);
+ }
+
+message IV_struct{
+string id=1;
+string name=2;
+float quantity=3; 
+}
+
+message response_IV{
+    string ctd=1;
+}
