@@ -2,6 +2,7 @@ package controller
 
 import (
 	"context"
+	"prac_proj/interfaces"
 	"prac_proj/model"
 	pb "prac_proj/proto"
 )
@@ -12,17 +13,28 @@ type RPCServer struct {
 	
 	pb.UnimplementedIvServiceServer
 }
+var (IV_service interfaces.IV_int)
 
-// var (
-// 	ItemService it.IUpdateInventory
-// 	InventoryService interfaces.Inventory
-// 	Mcoll            *mongo.Collection
-// )
+func (s *RPCServer) Create_IV(ctx context.Context,val *pb.IVStruct)(*pb.Response_IV,error){
+input :=&model.IV_model{
+	Name:     val.Name,
+	Quantity: val.Quantity,
+}
 
-func (s *RPCServer) create_IV(ctx context.Context,val *pb.IVStruct)(*pb.Response_IV,error){
-	var input *model.IV_model
+_,err:=IV_service.Create__IV(input)
+if err!= nil{
+	return nil,err
+}else{
+	iv:=&pb.Response_IV{
+		Ctd: "success",
+	}
+	return iv,nil
+}
 
-	if err:= ctx.sho
+
+
+	
+
 
 
 

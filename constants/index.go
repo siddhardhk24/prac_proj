@@ -1,5 +1,5 @@
 package constants
 
-const ConnectionString = "mongodb+srv://sidhudb1:Sidhu@2412@cluster0.qztvtz2.mongodb.net/"
+const ConnectionString = "mongodb+srv://siddhardhk:Sidhu@cluster0.txfa1th.mongodb.net/"
 
-const port =":2412"
+const Port =":2412"
